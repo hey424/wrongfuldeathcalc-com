@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Methodology — How the Wrongful Death Calculator Works | wrongfuldeathcalc.com';
+const description = 'Formulas behind our wrongful death estimator: economic damages (lost earnings with personal consumption adjustment, lost services, funeral, pre-death medical) plus the survivor-relationship multiplier.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Methodology</h1>
+  <p class="byline">Reviewed by Ellis Pemberton, EL &mdash; Editor-in-Chief, Wrongful Death Lead. Last updated May 2026.</p>
+
+  <p>The calculator uses a structured economic-damages-plus-multiplier framework for non-economic damages. This is consistent with how forensic economists, plaintiff attorneys, and defense counsel construct wrongful death case valuations during settlement negotiation. The economic component is more arithmetic than judgment; the non-economic component carries the major variability.</p>
+
+  <h2>Step 1: Lost earnings (the work-life component)</h2>
+  <p>The decedent's expected future earnings, reduced for the share they would have spent on themselves (personal consumption), reduced to present value.</p>
+  <p>Simplified formula:</p>
+  <p><code>Lost earnings = (Annual earnings &minus; Personal consumption) &times; Work-life expectancy &times; Present-value factor</code></p>
+  <p>In real cases, a forensic economist builds this with age-and-occupation-specific work-life tables, expected wage growth, and a present-value discount rate. Our calculator uses simplifying assumptions:</p>
+  <ul>
+    <li><strong>Personal consumption:</strong> 30% for married decedents with dependents (typical economic-expert range is 20&ndash;35%). The remaining 70% is the family-loss share that funds survivor recovery.</li>
+    <li><strong>Wage growth:</strong> not separately modeled. For an informational estimate, the years-of-work-life-remaining input absorbs the broad trajectory.</li>
+    <li><strong>Discount rate:</strong> not separately applied for the rough estimate. Present-value reductions in real cases use a discount rate roughly equal to the net real return on safe investments &mdash; typically 2&ndash;4%.</li>
+  </ul>
+  <p>For high-stakes cases, your attorney will retain a forensic economist whose model will be considerably more precise than ours.</p>
+
+  <h2>Step 2: Pre-death medical and funeral</h2>
+  <p>Add to the lost earnings:</p>
+  <ul>
+    <li>All medical expenses incurred between the injury and the death (these belong to the estate in a survival action in most states).</li>
+    <li>Reasonable funeral and burial costs (these belong to the survivors directly).</li>
+  </ul>
+
+  <h2>Step 3: Lost household services</h2>
+  <p>The decedent's contributions to the household beyond wages: childcare, meal preparation, home maintenance, transportation, financial management. Valued at replacement cost. Forensic economists use occupational replacement rates from the BLS.</p>
+  <p>For our calculator we use an annual lost-services input and multiply by the years-of-work-life-remaining, with no separate discount. In litigation, lost services would be more precisely modeled with age-dependent service contribution tables.</p>
+
+  <h2>Step 4: Build the economic damages total</h2>
+  <p><code>Economic damages = Lost earnings + Pre-death medical + Funeral + Lost services</code></p>
+
+  <h2>Step 5: Apply the survivor-relationship multiplier</h2>
+  <p>Non-economic damages (loss of consortium, parental companionship, mental anguish where allowed) are estimated as a multiplier of economic damages. The multiplier is scaled to who survives and what they relied on:</p>
+  <table>
+    <thead>
+      <tr><th>Survivor situation</th><th>Multiplier</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Adult decedent with surviving spouse only, no minor children</td><td>1.5&times;</td></tr>
+      <tr><td>Adult decedent with surviving parents, no spouse or children</td><td>2&times;</td></tr>
+      <tr><td>Adult decedent with surviving spouse and minor children</td><td>2.5&times;</td></tr>
+      <tr><td>Adult decedent who was primary caregiver / sole provider for minor children</td><td>3.5&times;</td></tr>
+    </tbody>
+  </table>
+  <p>The multipliers reflect the breadth and weight of non-economic loss the survivors will be entitled to recover. Cases involving the death of a minor child use a different framework that emphasizes parental grief and loss of expected future relationship rather than economic dependence; that case type is not handled by our calculator.</p>
+
+  <h2>Step 6: Build the total and apply a range</h2>
+  <p><code>Estimated value = Economic damages + (Economic damages &times; multiplier)</code></p>
+  <p>Reported as a low-to-high range by applying &plusmn;25%.</p>
+
+  <h2>What this method does not capture</h2>
+
+  <h3>Pre-death pain and suffering</h3>
+  <p>If the decedent was conscious between injury and death, the survival action may include pain-and-suffering damages for that interval. In states that allow this, the damages can be substantial &mdash; especially in burn cases, drowning cases, or any prolonged-conscious-death fact pattern. Our calculator does not estimate this; it's case-specific and requires evidence of contemporaneous awareness.</p>
+
+  <h3>Punitive damages</h3>
+  <p>Where the conduct was reckless, intentional, or showed conscious disregard for safety, punitive damages may be available &mdash; in some cases capped by state statute. Drunk driver fatalities, repeated safety-rule violations, and corporate misconduct cases are common contexts. Punitive damages can equal or exceed compensatory damages. Our calculator does not estimate them.</p>
+
+  <h3>Statutory caps</h3>
+  <p>Some states cap non-economic damages, particularly in medical malpractice wrongful death. Caps range from $250K to $750K depending on state. Where applicable, recovery is reduced to the cap regardless of what the math says.</p>
+
+  <h3>Liability strength and venue</h3>
+  <p>A case with strong liability evidence (negligence per se, video evidence, prior similar conduct) settles at the higher end of the range. A case with disputed liability settles at the lower end. Venue effects (urban vs. rural, plaintiff-friendly vs. defense-friendly counties) move the range up or down 20&ndash;40%.</p>
+
+  <h3>Standing and statutory beneficiaries</h3>
+  <p>Each state's wrongful death statute specifies who has standing to recover and who shares the recovery. The calculator does not model how the eventual settlement gets divided among multiple statutory beneficiaries.</p>
+
+  <h2>Sources we relied on</h2>
+  <p>The framework reflects standard forensic-economics methodology described in <em>Determining Economic Damages</em> (James Patrick), the AAJ wrongful death materials, and the WPI (West Publishing) pattern jury instructions for wrongful death in major jurisdictions. Work-life expectancy tables come from BLS publications. Personal-consumption percentages reflect the conventional 20&ndash;35% range used in forensic-economic testimony.</p>
+
+  <p>For specific case categories, see the guides: <a href="/guides/economic-damages-in-wrongful-death-cases">economic damages</a>, <a href="/guides/non-economic-damages-in-wrongful-death">non-economic damages</a>, <a href="/guides/who-can-file-a-wrongful-death-claim">who can file</a>, and <a href="/guides/wrongful-death-statute-of-limitations">statute of limitations</a>.</p>
+</BaseLayout>

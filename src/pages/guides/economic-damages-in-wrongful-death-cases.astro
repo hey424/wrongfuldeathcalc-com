@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const title = 'Economic Damages in Wrongful Death Cases | wrongfuldeathcalc.com';
+const description = 'How forensic economists and plaintiff attorneys construct the economic-damages component of a wrongful death case: lost earnings methodology, personal consumption, lost benefits, lost household services, present value.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Economic Damages in Wrongful Death Cases</h1>
+  <p class="byline">By Ellis Pemberton, Editor-in-Chief. Reviewed May 2026.</p>
+
+  <p>Economic damages in a wrongful death case are the documentable financial losses that flow from the death &mdash; lost earnings, lost benefits, lost household services, funeral and pre-death medical expenses. These numbers are constructed by forensic economists in serious cases, and they form the backbone of the case valuation: most of the non-economic damages are scaled relative to them. This guide explains how the components are built.</p>
+
+  <h2>Lost earnings &mdash; the largest component</h2>
+  <p>Lost earnings represent what the decedent would have earned over their expected remaining work life, reduced for personal consumption (the share the decedent would have spent on themselves) and reduced to present value (because a dollar received today is worth more than a dollar received in 25 years).</p>
+
+  <h3>Step 1: Establish baseline annual earnings</h3>
+  <p>Tax returns for the prior 3&ndash;5 years are the starting evidence. Bring W-2s, 1099s, K-1s, and self-employment Schedule Cs. Salaried workers with stable employment are simpler; commission-based workers, self-employed, and those with significant variable income require more analysis. Include the value of benefits separately (see below); the earnings line is wages and salary.</p>
+
+  <h3>Step 2: Project earnings growth</h3>
+  <p>Forensic economists use occupation-specific wage growth tables and historical inflation data. For a young professional in a career trajectory, projected earnings should account for raises and promotions over time. For an established worker near peak earnings, growth is more modest. Industry-standard real wage growth assumptions are 1&ndash;2% per year above inflation.</p>
+
+  <h3>Step 3: Apply work-life expectancy</h3>
+  <p>Work-life expectancy is the expected number of years the decedent would have remained in the labor force. BLS publishes work-life tables by age, sex, education, and occupation. A 30-year-old college-educated worker has a work-life expectancy of roughly 30&ndash;33 years; a 50-year-old worker has roughly 12&ndash;15 years; a 65-year-old has 5&ndash;7 years if still working. These are statistical averages.</p>
+
+  <h3>Step 4: Deduct personal consumption</h3>
+  <p>Not all of the decedent's earnings would have gone to the family; some would have gone to the decedent's own consumption (clothing, recreation, personal expenses). The remaining "family loss" is the recoverable portion.</p>
+  <p>Forensic-economic conventions for personal consumption percentages:</p>
+  <ul>
+    <li><strong>Married with children:</strong> 20&ndash;30% personal consumption (family-loss share is 70&ndash;80%).</li>
+    <li><strong>Married without children:</strong> 30&ndash;40% personal consumption.</li>
+    <li><strong>Single with dependent parents or siblings:</strong> 50&ndash;65% personal consumption (lower family-loss share).</li>
+  </ul>
+  <p>The exact percentage depends on the decedent's actual spending pattern and the analyst's chosen method. Patton-Nelson and BLS-Consumer-Expenditure-Survey-based methodologies produce slightly different numbers.</p>
+
+  <h3>Step 5: Reduce to present value</h3>
+  <p>Future earnings must be discounted to present value because the survivors receive the recovery now, not over the decades the earnings would have accrued. The discount rate is a contested point in damages litigation. Plaintiff side typically argues for a low discount rate (reflecting safe-investment returns net of inflation, typically 1&ndash;3% real); defense argues for a higher rate (reflecting historical equity returns, often 4&ndash;6% real). The chosen rate dramatically affects the final number.</p>
+  <p><strong>Why present value matters.</strong> A $1M loss spread over 30 years at a 2% discount rate has a present value of roughly $740,000. At a 5% discount rate, $670,000. At a 7% discount rate, $580,000. The math is doing real work; the assumptions inside it are doing more.</p>
+
+  <h2>Lost benefits</h2>
+  <p>Beyond wages, the decedent's employment likely included:</p>
+  <ul>
+    <li><strong>Health insurance.</strong> Both the employer's contribution to premiums (commonly 70&ndash;80% of total) and any employer-paid dependent coverage.</li>
+    <li><strong>Retirement contributions.</strong> Employer 401(k) match, pension accrual, profit sharing.</li>
+    <li><strong>Life insurance through employer.</strong> Group life and AD&amp;D coverage.</li>
+    <li><strong>Disability insurance.</strong> Short-term and long-term.</li>
+    <li><strong>Paid time off in lieu of cash equivalent.</strong></li>
+  </ul>
+  <p>These benefits typically total 25&ndash;35% on top of base wages. They are recoverable in the same way as wages &mdash; projected forward, reduced for personal consumption (some benefits, like life insurance through the employer, would have benefited the family entirely), reduced to present value.</p>
+
+  <h2>Lost household services</h2>
+  <p>The decedent's non-wage contributions to the household: childcare, cooking, cleaning, lawn care, home maintenance, transportation, financial management, eldercare. These are recoverable at replacement cost (what it would cost to hire someone to do them).</p>
+  <p>Forensic economists use BLS-derived hourly rates for each category. The American Time Use Survey provides estimates of average hours per category by household type. A typical adult contributes 15&ndash;25 hours per week of household services, valued at $15&ndash;$30 per hour depending on the task &mdash; producing $12,000&ndash;$40,000 per year in service value.</p>
+  <p>Like lost earnings, lost services are projected forward, but the relevant time horizon may be different. Lost services continue past retirement age (people contribute services into older age), but the per-year value may decline.</p>
+
+  <h2>Pre-death medical expenses</h2>
+  <p>Medical care between the injury and the death. ER, hospital, surgery, ICU, palliative care, transport, follow-up. In states with a survival action, this is recoverable through the estate. In states without separate survival actions, it's typically rolled into wrongful death recovery.</p>
+
+  <h2>Funeral and burial expenses</h2>
+  <p>Reasonable funeral, burial, or cremation costs. Includes funeral director services, casket or urn, cemetery plot or columbarium niche, vault, headstone or marker, transportation, and immediate-disposition costs. Recoverable as out-of-pocket survivor expense. Typical range $7,000&ndash;$20,000 in 2026 depending on choices and location.</p>
+
+  <h2>What economic damages do not include</h2>
+  <p>Economic damages exclude pain and suffering (covered by non-economic damages), grief (also non-economic), and loss of the relationship itself (consortium, companionship). Economic damages also exclude punitive damages, which are calculated separately.</p>
+
+  <h2>Why the assumptions matter</h2>
+  <p>The economic damages number in a serious wrongful death case can range from a few hundred thousand dollars (older decedent, modest income, no dependents) to multiple millions (young decedent, high income, young children). The assumptions used &mdash; particularly personal consumption percentage, discount rate, and work-life expectancy &mdash; can move the final number by 25&ndash;50%. Forensic economists testify and are cross-examined precisely because their assumptions are contestable.</p>
+  <p>For settlement-stage estimation, our calculator uses conservative middle-of-range assumptions. Litigation-stage analysis should use a forensic economist whose work product can be defended at trial.</p>
+
+  <p>For non-economic damages, see <a href="/guides/non-economic-damages-in-wrongful-death">non-economic damages</a>. For who can recover them, see <a href="/guides/who-can-file-a-wrongful-death-claim">who can file</a>.</p>
+</BaseLayout>
