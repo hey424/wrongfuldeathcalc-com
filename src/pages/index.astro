@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadCapture from '../components/LeadCapture.astro';
 const title = 'Wrongful Death Settlement Calculator — Estimate Claim Value | wrongfuldeathcalc.com';
 const description = 'Estimate the value of a wrongful death claim. Combines economic losses (lost earnings, funeral costs, lost services) and non-economic damages (loss of companionship, guidance, consortium). Educational only.';
 ---
@@ -51,6 +52,8 @@ const description = 'Estimate the value of a wrongful death claim. Combines econ
       </form>
     </div>
   </section>
+
+  <LeadCapture caseType="wrongful_death" caseTypeLabel="Wrongful Death" />
 
   <section>
     <h2>What's compensable in a wrongful death case</h2>
